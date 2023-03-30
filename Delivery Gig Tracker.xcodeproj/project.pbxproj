@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6000470429D55E8100587C5C /* Delivery_Gig_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */; };
+		6000470629D55E8100587C5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470529D55E8100587C5C /* ContentView.swift */; };
+		6000470829D55E8200587C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6000470729D55E8200587C5C /* Assets.xcassets */; };
+		6000470B29D55E8200587C5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6000470A29D55E8200587C5C /* Preview Assets.xcassets */; };
+		6000470D29D55E8200587C5C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470C29D55E8200587C5C /* Persistence.swift */; };
+		6000471029D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */; };
+		6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */; };
+		6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */; };
+		6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6000471629D55E8200587C5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 600046F829D55E8100587C5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 600046FF29D55E8100587C5C;
+			remoteInfo = "Delivery Gig Tracker";
+		};
+		6000472029D55E8200587C5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 600046F829D55E8100587C5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 600046FF29D55E8100587C5C;
+			remoteInfo = "Delivery Gig Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6000470029D55E8100587C5C /* Delivery Gig Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delivery Gig Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerApp.swift; sourceTree = "<group>"; };
+		6000470529D55E8100587C5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6000470729D55E8200587C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6000470A29D55E8200587C5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6000470C29D55E8200587C5C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Delivery_Gig_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		6000471529D55E8200587C5C /* Delivery Gig TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delivery Gig TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerTests.swift; sourceTree = "<group>"; };
+		6000471F29D55E8200587C5C /* Delivery Gig TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delivery Gig TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITests.swift; sourceTree = "<group>"; };
+		6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		600046FD29D55E8100587C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471229D55E8200587C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471C29D55E8200587C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		600046F729D55E8100587C5C = {
+			isa = PBXGroup;
+			children = (
+				6000470229D55E8100587C5C /* Delivery Gig Tracker */,
+				6000471829D55E8200587C5C /* Delivery Gig TrackerTests */,
+				6000472229D55E8200587C5C /* Delivery Gig TrackerUITests */,
+				6000470129D55E8100587C5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6000470129D55E8100587C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6000470029D55E8100587C5C /* Delivery Gig Tracker.app */,
+				6000471529D55E8200587C5C /* Delivery Gig TrackerTests.xctest */,
+				6000471F29D55E8200587C5C /* Delivery Gig TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6000470229D55E8100587C5C /* Delivery Gig Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */,
+				6000470529D55E8100587C5C /* ContentView.swift */,
+				6000470729D55E8200587C5C /* Assets.xcassets */,
+				6000470C29D55E8200587C5C /* Persistence.swift */,
+				6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */,
+				6000470929D55E8200587C5C /* Preview Content */,
+			);
+			path = "Delivery Gig Tracker";
+			sourceTree = "<group>";
+		};
+		6000470929D55E8200587C5C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6000470A29D55E8200587C5C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6000471829D55E8200587C5C /* Delivery Gig TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */,
+			);
+			path = "Delivery Gig TrackerTests";
+			sourceTree = "<group>";
+		};
+		6000472229D55E8200587C5C /* Delivery Gig TrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */,
+				6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */,
+			);
+			path = "Delivery Gig TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		600046FF29D55E8100587C5C /* Delivery Gig Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6000472929D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig Tracker" */;
+			buildPhases = (
+				600046FC29D55E8100587C5C /* Sources */,
+				600046FD29D55E8100587C5C /* Frameworks */,
+				600046FE29D55E8100587C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Delivery Gig Tracker";
+			productName = "Delivery Gig Tracker";
+			productReference = 6000470029D55E8100587C5C /* Delivery Gig Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6000471429D55E8200587C5C /* Delivery Gig TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6000472C29D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig TrackerTests" */;
+			buildPhases = (
+				6000471129D55E8200587C5C /* Sources */,
+				6000471229D55E8200587C5C /* Frameworks */,
+				6000471329D55E8200587C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6000471729D55E8200587C5C /* PBXTargetDependency */,
+			);
+			name = "Delivery Gig TrackerTests";
+			productName = "Delivery Gig TrackerTests";
+			productReference = 6000471529D55E8200587C5C /* Delivery Gig TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6000471E29D55E8200587C5C /* Delivery Gig TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6000472F29D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig TrackerUITests" */;
+			buildPhases = (
+				6000471B29D55E8200587C5C /* Sources */,
+				6000471C29D55E8200587C5C /* Frameworks */,
+				6000471D29D55E8200587C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6000472129D55E8200587C5C /* PBXTargetDependency */,
+			);
+			name = "Delivery Gig TrackerUITests";
+			productName = "Delivery Gig TrackerUITests";
+			productReference = 6000471F29D55E8200587C5C /* Delivery Gig TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		600046F829D55E8100587C5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					600046FF29D55E8100587C5C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					6000471429D55E8200587C5C = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 600046FF29D55E8100587C5C;
+					};
+					6000471E29D55E8200587C5C = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 600046FF29D55E8100587C5C;
+					};
+				};
+			};
+			buildConfigurationList = 600046FB29D55E8100587C5C /* Build configuration list for PBXProject "Delivery Gig Tracker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 600046F729D55E8100587C5C;
+			productRefGroup = 6000470129D55E8100587C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				600046FF29D55E8100587C5C /* Delivery Gig Tracker */,
+				6000471429D55E8200587C5C /* Delivery Gig TrackerTests */,
+				6000471E29D55E8200587C5C /* Delivery Gig TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		600046FE29D55E8100587C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6000470B29D55E8200587C5C /* Preview Assets.xcassets in Resources */,
+				6000470829D55E8200587C5C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471329D55E8200587C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471D29D55E8200587C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		600046FC29D55E8100587C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6000470D29D55E8200587C5C /* Persistence.swift in Sources */,
+				6000470629D55E8100587C5C /* ContentView.swift in Sources */,
+				6000471029D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld in Sources */,
+				6000470429D55E8100587C5C /* Delivery_Gig_TrackerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471129D55E8200587C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6000471B29D55E8200587C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */,
+				6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6000471729D55E8200587C5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 600046FF29D55E8100587C5C /* Delivery Gig Tracker */;
+			targetProxy = 6000471629D55E8200587C5C /* PBXContainerItemProxy */;
+		};
+		6000472129D55E8200587C5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 600046FF29D55E8100587C5C /* Delivery Gig Tracker */;
+			targetProxy = 6000472029D55E8200587C5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6000472729D55E8200587C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6000472829D55E8200587C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6000472A29D55E8200587C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Delivery Gig Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6000472B29D55E8200587C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Delivery Gig Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6000472D29D55E8200587C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Delivery Gig Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Delivery Gig Tracker";
+			};
+			name = Debug;
+		};
+		6000472E29D55E8200587C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Delivery Gig Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Delivery Gig Tracker";
+			};
+			name = Release;
+		};
+		6000473029D55E8200587C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Delivery Gig Tracker";
+			};
+			name = Debug;
+		};
+		6000473129D55E8200587C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25MZ2Z8UJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AD.Delivery-Gig-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Delivery Gig Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		600046FB29D55E8100587C5C /* Build configuration list for PBXProject "Delivery Gig Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6000472729D55E8200587C5C /* Debug */,
+				6000472829D55E8200587C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6000472929D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6000472A29D55E8200587C5C /* Debug */,
+				6000472B29D55E8200587C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6000472C29D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6000472D29D55E8200587C5C /* Debug */,
+				6000472E29D55E8200587C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6000472F29D55E8200587C5C /* Build configuration list for PBXNativeTarget "Delivery Gig TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6000473029D55E8200587C5C /* Debug */,
+				6000473129D55E8200587C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */,
+			);
+			currentVersion = 6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */;
+			path = Delivery_Gig_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 600046F829D55E8100587C5C /* Project object */;
+}
