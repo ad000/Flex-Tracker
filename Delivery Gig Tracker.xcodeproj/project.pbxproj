@@ -17,6 +17,8 @@
 		6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */; };
 		6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */; };
 		608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */; };
+		608076B529E9F346007D7872 /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B429E9F346007D7872 /* MainUIView.swift */; };
+		608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B629E9F6E4007D7872 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITests.swift; sourceTree = "<group>"; };
 		6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		608076B229E9EEB3007D7872 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		608076B429E9F346007D7872 /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
+		608076B629E9F6E4007D7872 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +106,13 @@
 			children = (
 				6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */,
 				6000470529D55E8100587C5C /* ContentView.swift */,
+				608076B429E9F346007D7872 /* MainUIView.swift */,
 				6000470729D55E8200587C5C /* Assets.xcassets */,
 				6000470C29D55E8200587C5C /* Persistence.swift */,
 				6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */,
 				608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */,
 				6000470929D55E8200587C5C /* Preview Content */,
+				608076B629E9F6E4007D7872 /* ViewModel.swift */,
 			);
 			path = "Delivery Gig Tracker";
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */,
 				6000471029D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld in Sources */,
 				6000470429D55E8100587C5C /* Delivery_Gig_TrackerApp.swift in Sources */,
+				608076B529E9F346007D7872 /* MainUIView.swift in Sources */,
+				608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

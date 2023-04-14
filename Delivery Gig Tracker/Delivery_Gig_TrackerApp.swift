@@ -13,7 +13,7 @@ struct Delivery_Gig_TrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainUIView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
