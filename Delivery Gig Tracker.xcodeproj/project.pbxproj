@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6000470429D55E8100587C5C /* Delivery_Gig_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */; };
-		6000470629D55E8100587C5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470529D55E8100587C5C /* ContentView.swift */; };
 		6000470829D55E8200587C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6000470729D55E8200587C5C /* Assets.xcassets */; };
 		6000470B29D55E8200587C5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6000470A29D55E8200587C5C /* Preview Assets.xcassets */; };
 		6000470D29D55E8200587C5C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000470C29D55E8200587C5C /* Persistence.swift */; };
-		6000471029D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */; };
 		6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */; };
 		6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */; };
 		6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */; };
@@ -41,11 +39,9 @@
 /* Begin PBXFileReference section */
 		6000470029D55E8100587C5C /* Delivery Gig Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delivery Gig Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerApp.swift; sourceTree = "<group>"; };
-		6000470529D55E8100587C5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6000470729D55E8200587C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6000470A29D55E8200587C5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6000470C29D55E8200587C5C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Delivery_Gig_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		6000471529D55E8200587C5C /* Delivery Gig TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delivery Gig TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerTests.swift; sourceTree = "<group>"; };
 		6000471F29D55E8200587C5C /* Delivery Gig TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delivery Gig TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +103,6 @@
 				6000470329D55E8100587C5C /* Delivery_Gig_TrackerApp.swift */,
 				6000470C29D55E8200587C5C /* Persistence.swift */,
 				6078160B29EA05A300B3CB03 /* Main */,
-				6078160929EA056D00B3CB03 /* Old */,
 				6000470729D55E8200587C5C /* Assets.xcassets */,
 				6000470929D55E8200587C5C /* Preview Content */,
 			);
@@ -137,15 +132,6 @@
 				6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */,
 			);
 			path = "Delivery Gig TrackerUITests";
-			sourceTree = "<group>";
-		};
-		6078160929EA056D00B3CB03 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				6000470529D55E8100587C5C /* ContentView.swift */,
-				6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */,
-			);
-			path = Old;
 			sourceTree = "<group>";
 		};
 		6078160B29EA05A300B3CB03 /* Main */ = {
@@ -289,9 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6000470D29D55E8200587C5C /* Persistence.swift in Sources */,
-				6000470629D55E8100587C5C /* ContentView.swift in Sources */,
 				608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */,
-				6000471029D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld in Sources */,
 				6000470429D55E8100587C5C /* Delivery_Gig_TrackerApp.swift in Sources */,
 				608076B529E9F346007D7872 /* MainUIView.swift in Sources */,
 				608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */,
@@ -621,16 +605,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6000470E29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */,
-			);
-			currentVersion = 6000470F29D55E8200587C5C /* Delivery_Gig_Tracker.xcdatamodel */;
-			path = Delivery_Gig_Tracker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -10,35 +10,43 @@ import SwiftUI
 
 struct MainUIView: View {
     // View Model
-    @StateObject private var viewModel = ViewModel()
+    @MainActor @StateObject private var viewModel = ViewModel()
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    private let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     var body: some View {
-        VStack {
-            // Entry List
-            VStack {
-                // ENTRY ITEM
-                HStack {
-                    Text("DATE")
-                    Text("START")
-                    Text("ENDTIME")
-                    Text("HOURS")
-                    Text("PAY")
-                    Text("ROUTE")
+        NavigationView {
+            List {
+                ForEach(viewModel.entries, id: \.id) { entry in
+                    NavigationLink {
+                        // TODO REMOVE
+                        Text("Block at \(entry.date, formatter: dateFormatter)")
+                    } label: {
+                        Text(entry.date, formatter: dateFormatter)
+                        Text(entry.timeStart, formatter: timeFormatter)
+                        Text(entry.timeEnd, formatter: timeFormatter)
+                        Text("$\(String(format: "%.2f", entry.pay))")
+                    }
                 }
             }
-            
-            // Edit Bar
-            Button("ADD ENTRY", action: viewModel.addEntryClicked)
-            
-            // Selected Entry View
-            VStack {
-                Text("ROUTE")
-                Text("ENDTIME")
-                HStack {
-                    Text("MILAGE")
-                    Text("RETURN")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: viewModel.addEntryClicked) {
+                        Label("Add Entry", systemImage: "plus")
+                    }
                 }
             }
+            Text("Select an item")
+            
         }
     }
 }

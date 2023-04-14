@@ -10,9 +10,10 @@ import CoreData
 
 class ViewModel: ObservableObject {
     let context = PersistenceController.shared.container.viewContext
-    var entries: [Entry] = []
+    @Published var entries: [Entry] = []
     
     init() {
+        print("init ViewModel")
         fetchAllEntries()
     }
     
@@ -96,6 +97,12 @@ class ViewModel: ObservableObject {
     
     func addEntryClicked() {
         // Display Add Entry Pop Up
+        
+        // TODO
+        let testDate = Date()
+        let entry = createEntry(date: testDate, start: testDate, end: testDate, pay: 24)
+        addEntry(entry: entry)
+        print("TEST: Add - \(testDate)")
     }
     
 }
