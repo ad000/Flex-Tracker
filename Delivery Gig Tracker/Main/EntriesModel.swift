@@ -20,12 +20,12 @@ class EntriesModel: ObservableObject {
     }
     
     func fetchAllEntries() {
-        var blocks: [BlockInfo] = []
+        var blocks: [BlockEntity] = []
         // Fetch Block
-        let fetchRequest: NSFetchRequest<BlockInfo> = BlockInfo.fetchRequest()
+        let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
         do {
-            let results = try context.fetch(fetchRequest) as [BlockInfo]
-            print("\tCore: BlockInfo fetched, count:", results.count)
+            let results = try context.fetch(fetchRequest) as [BlockEntity]
+            print("\tCore: BlockEntity fetched, count:", results.count)
             blocks = results
         }
         catch {
@@ -34,11 +34,11 @@ class EntriesModel: ObservableObject {
         // For Each: Fetch Route Info
         for block in blocks {
             print("\(block.date!), \(block.timeStart!)")
-            let fetchRequest: NSFetchRequest<RouteInfo> = RouteInfo.fetchRequest()
+            let fetchRequest: NSFetchRequest<RouteEntity> = RouteEntity.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id == %@", block.id! as CVarArg) // Set Parameters
             do {
-                let routes = try context.fetch(fetchRequest) as [RouteInfo]
-                if routes.count == 0 { print("\(block.id!): \(block.date!): MISSING ROUTEINFO") }
+                let routes = try context.fetch(fetchRequest) as [RouteEntity]
+                if routes.count == 0 { print("\(block.id!): \(block.date!): MISSING ROUTE ENTITY") }
                 else {
                     let route = routes[0]
                     // Create and Add Entry
@@ -56,22 +56,41 @@ class EntriesModel: ObservableObject {
     func sortEntries() {
         // Sort by: Date > Time Start
         entries = entries.sorted(by: {
-            (Int($0.date.timeIntervalSince1970), Int($0.timeStart.timeIntervalSince1970)) <
-              (Int($1.date.timeIntervalSince1970), Int($1.timeStart.timeIntervalSince1970))
+            ($0.date, $0.timeStart) <
+              ($1.date, $1.timeStart)
         })
     }
     
+    func convertDateToDateString(date: Date) -> String {
+        // Create Date Formatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        // Set Date Format
+        dateFormatter.dateFormat = "MM-dd"
+        // Convert Date to String
+        return dateFormatter.string(from: date)
+    }
+    
+    func convertTimeToTimeString(time: Date) -> String {
+        let calendar = Calendar.current
+        // Get Time Components
+        let hr = calendar.component(.hour, from: time)
+        let hour: String = (hr<10) ? "0\(hr)" : String(hr)
+        let min = calendar.component(.minute, from: time)
+        let minutes: String = (min<10) ? "0\(min)" : String(min)
+        return "\(hour):\(minutes)"
+    }
     
     func createEntry(date: Date, start: Date, end: Date, pay: Double) -> Entry {
         // Create EntryInfo
-        let block = BlockInfo(context: context)
+        let block = BlockEntity(context: context)
         block.id = UUID()
-        block.date = date
-        block.timeStart = start
-        block.timeEnd = end
+        block.date = convertDateToDateString(date: date)
+        block.timeStart = convertTimeToTimeString(time: start)
+        block.timeEnd = convertTimeToTimeString(time:end)
         block.pay = pay
         // Create BlockInfo
-        let route = RouteInfo(context: context)
+        let route = RouteEntity(context: context)
         route.id = block.id
         // Create Entry Object
         let entry = Entry(block: block, route: route)

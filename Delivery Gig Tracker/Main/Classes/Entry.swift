@@ -10,18 +10,18 @@ import Foundation
 // Object holding entry data
 class Entry: ObservableObject {
     var id: UUID
-    var block: BlockInfo
-    var route: RouteInfo
+    var block: BlockEntity
+    var route: RouteEntity
     
-    var date: Date {
+    var date: String {
         get { return block.date! }
     }
     
-    var timeStart: Date {
+    var timeStart: String {
         get { return block.timeStart!}
     }
     
-    var timeEnd: Date {
+    var timeEnd: String {
         get { return block.timeEnd!}
     }
     
@@ -30,7 +30,7 @@ class Entry: ObservableObject {
     }
     
     
-    init(block: BlockInfo, route: RouteInfo) {
+    init(block: BlockEntity, route: RouteEntity) {
         self.block = block
         self.route = route
         self.id = block.id!

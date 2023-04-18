@@ -25,20 +25,20 @@ final class Delivery_Gig_TrackerTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        let dateString = "01/01/1990"
+        let dateString = "01-10"
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "MM-dd"
         let dateCurrent = dateFormatter.date(from: dateString)!
         
         let pay = 90.5
         
-        let model = ViewModel()
+        let model = EntriesModel()
         
         // Test Creation
         let entry = model.createEntry(date: dateCurrent, start: dateCurrent, end: dateCurrent, pay: pay)
         XCTAssertTrue(entry.pay == pay)
-        XCTAssertTrue(entry.date == dateCurrent)
+        XCTAssertTrue(entry.date == dateString)
         
         // Test Add
         model.addEntry(entry: entry)

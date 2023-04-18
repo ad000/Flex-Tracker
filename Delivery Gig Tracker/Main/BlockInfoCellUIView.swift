@@ -10,25 +10,25 @@ import SwiftUI
 struct BlockInfoCellUIView: View {
     var entry: Entry
     
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        return formatter
-    }()
-    private let timeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
+//    private let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+//        return formatter
+//    }()
+//    private let timeFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .short
+//        return formatter
+//    }()
+//    
     var body: some View {
         NavigationLink {
             // TODO REMOVE
             Text("Block at \(entry.date)")
         } label: {
-            Text(entry.date, formatter: dateFormatter)
-            Text(entry.timeStart, formatter: timeFormatter)
-            Text(entry.timeEnd, formatter: timeFormatter)
+            Text(entry.date)
+            Text(entry.timeStart)
+            Text(entry.timeEnd)
             Text("$\(String(format: "%.2f", entry.pay))")
         }
 //        .padding(8)
