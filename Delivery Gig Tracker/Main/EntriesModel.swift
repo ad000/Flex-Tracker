@@ -61,33 +61,13 @@ class EntriesModel: ObservableObject {
         })
     }
     
-    func convertDateToDateString(date: Date) -> String {
-        // Create Date Formatter
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        // Set Date Format
-        dateFormatter.dateFormat = "MM-dd"
-        // Convert Date to String
-        return dateFormatter.string(from: date)
-    }
-    
-    func convertTimeToTimeString(time: Date) -> String {
-        let calendar = Calendar.current
-        // Get Time Components
-        let hr = calendar.component(.hour, from: time)
-        let hour: String = (hr<10) ? "0\(hr)" : String(hr)
-        let min = calendar.component(.minute, from: time)
-        let minutes: String = (min<10) ? "0\(min)" : String(min)
-        return "\(hour):\(minutes)"
-    }
-    
     func createEntry(date: Date, start: Date, end: Date, pay: Double) -> Entry {
         // Create EntryInfo
         let block = BlockEntity(context: context)
         block.id = UUID()
-        block.date = convertDateToDateString(date: date)
-        block.timeStart = convertTimeToTimeString(time: start)
-        block.timeEnd = convertTimeToTimeString(time:end)
+        block.date = date.toDateString()
+        block.timeStart = start.toTimeString()
+        block.timeEnd = end.toTimeString()
         block.pay = pay
         // Create BlockInfo
         let route = RouteEntity(context: context)

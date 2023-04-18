@@ -14,20 +14,25 @@ struct MainUIView: View {
     
     var body: some View {
         NavigationView {
+            // Block Cells
             List {
                 ForEach(viewModel.entries, id: \.id) { entry in
-                    BlockInfoCellUIView(entry: entry)
+                    
+                        NavigationLink(
+                            destination: RouteInfoUIView(entry: entry)
+                        ) {
+                            BlockInfoCellUIView(entry: entry)
+                        }
                 }
             }
             .toolbar {
                 ToolbarItem {
                     NavigationLink(destination: BlockCreationUIView(viewModel: viewModel)) {
                         Label("Add Entry", systemImage: "plus")
-                    }            
+                    }
                 }
+                
             }
-            Text("Select an item")
-            
         }
     }
 }
