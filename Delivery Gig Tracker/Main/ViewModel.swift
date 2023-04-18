@@ -32,4 +32,16 @@ class ViewModel: ObservableObject {
         self.objectWillChange.send()
     }
     
+    func deleteEntryClicked(at offsets: IndexSet) {
+        if let index = offsets.first {
+            let entry: Entry = model.entries[index]
+            model.deleteEntry(entry: entry)
+            // Save
+            model.save()
+            // Update View
+            self.objectWillChange.send()
+    
+        }
+    }
+    
 }

@@ -93,6 +93,7 @@ class EntriesModel: ObservableObject {
         // Delete From CoreData
         context.delete(entry.block)
         context.delete(entry.route)
+        print("REMOVED: \(entry.id) : \(entry.date)")
     }
     
     func save() {

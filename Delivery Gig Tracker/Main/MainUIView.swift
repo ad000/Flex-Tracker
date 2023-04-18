@@ -24,6 +24,7 @@ struct MainUIView: View {
                             BlockInfoCellUIView(entry: entry)
                         }
                 }
+                .onDelete(perform: viewModel.deleteEntryClicked)
             }
             .toolbar {
                 ToolbarItem {

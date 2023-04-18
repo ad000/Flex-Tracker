@@ -8,35 +8,36 @@
 import SwiftUI
 
 struct BlockInfoCellUIView: View {
-    var entry: Entry
+    @ObservedObject var entry: Entry
     
-//    private let dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .short
-//        return formatter
-//    }()
-//    private let timeFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.timeStyle = .short
-//        return formatter
-//    }()
-//
+    @State var date: String = ""
+    @State var time: String = ""
+    @State var hours: Double = 0
+    @State var pay: Double = 0
+    @State var route: String = ""
+    
+    init(entry: Entry) {
+        self.entry = entry
+        loadEntryData()
+    }
+    
+    func loadEntryData() {
+        date = entry.date
+        time = entry.timeStart
+        hours = entry.hoursBlock
+        pay = entry.pay
+        route = entry.routing
+    }
     
     var body: some View {
-        NavigationLink {
-            // TODO REMOVE
-            Text("Block at \(entry.date)")
-        } label: {
-            Text(entry.date)
-            Text(entry.timeStart)
-            Text(String(entry.hoursBlock) ?? "")
-            Text("$\(String(format: "%.2f", entry.pay))")
+        HStack {
+            Text(date)
+            Text(time)
+            Text(String(hours) )
+            Text("$\(String(format: "%.2f", pay))")
+            Text(route)
         }
-//        .padding(8)
-//        .frame(maxWidth: .infinity, alignment: .leading)
-//        .foregroundColor(Color.black)
-//        .background(Color.white)
-//        .cornerRadius(4)
+        .onAppear() {loadEntryData()}
     }
 }
 

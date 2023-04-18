@@ -10,8 +10,8 @@ import Foundation
 // Object holding entry data
 class Entry: ObservableObject {
     var id: UUID
-    var block: BlockEntity
-    var route: RouteEntity
+    @Published var block: BlockEntity
+    @Published var route: RouteEntity
     
     var date: String {
         get { return block.date! }
@@ -43,11 +43,25 @@ class Entry: ObservableObject {
         get { return block.pay }
     }
     
+    var routing: String {
+        get { return route.route ?? ""}
+    }
     
     init(block: BlockEntity, route: RouteEntity) {
         self.block = block
         self.route = route
         self.id = block.id!
     }
+    
+    func save() {
+        let context = PersistenceController.shared.container.viewContext
+        do {
+            try context.save()
+        }
+        catch {
+            // Handle Error
+        }
+    }
+    
     
 }
