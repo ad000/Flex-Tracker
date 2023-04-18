@@ -13,8 +13,8 @@ class EntriesModel: ObservableObject {
     
     @Published var entries: [Entry] = []
     
-    init() {
-        fetchAllEntries()
+    init(test: Bool = false) {
+        if (!test) {fetchAllEntries()}
         // Sort
         sortEntries()
     }

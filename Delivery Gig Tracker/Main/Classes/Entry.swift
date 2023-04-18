@@ -25,6 +25,20 @@ class Entry: ObservableObject {
         get { return block.timeEnd!}
     }
     
+    var hoursBlock: Double {
+        get {
+            // Get total Minutes
+            let startHours = Double(timeStart.prefix(2))!
+            let startMinutes = Double(timeStart.suffix(2))!
+            let endHours = Double(timeEnd.prefix(2))!
+            let endMinutes = Double(timeEnd.suffix(2))!
+            // Convert Minutes to Hours
+            let minutes = ((endHours * 60) + endMinutes) - ((startHours * 60) + startMinutes)
+            let hours: Double = Double(minutes / 60)
+            return round(hours * 100) / 100.0 // to 2 decimal places: 00.00
+        }
+    }
+    
     var pay: Double {
         get { return block.pay }
     }

@@ -20,7 +20,8 @@ struct BlockInfoCellUIView: View {
 //        formatter.timeStyle = .short
 //        return formatter
 //    }()
-//    
+//
+    
     var body: some View {
         NavigationLink {
             // TODO REMOVE
@@ -28,7 +29,7 @@ struct BlockInfoCellUIView: View {
         } label: {
             Text(entry.date)
             Text(entry.timeStart)
-            Text(entry.timeEnd)
+            Text(String(entry.hoursBlock) ?? "")
             Text("$\(String(format: "%.2f", entry.pay))")
         }
 //        .padding(8)

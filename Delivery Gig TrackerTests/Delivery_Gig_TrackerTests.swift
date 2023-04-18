@@ -18,6 +18,22 @@ final class Delivery_Gig_TrackerTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testEntryListSorting() throws {
+        let model = EntriesModel(test: true)
+        // Create Test Entries
+        let a = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        let b = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        let c = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        // Add unordered Entries
+        model.addEntry(entry: a)
+        model.addEntry(entry: b)
+        model.addEntry(entry: c)
+        // Assert Correct Order
+        XCTAssertTrue(model.entries[0].id == a.id)
+        XCTAssertTrue(model.entries[1].id == b.id)
+        XCTAssertTrue(model.entries[2].id == c.id)
+    }
 
     func testCreateEntry() throws {
         // This is an example of a functional test case.
@@ -33,7 +49,7 @@ final class Delivery_Gig_TrackerTests: XCTestCase {
         
         let pay = 90.5
         
-        let model = EntriesModel()
+        let model = EntriesModel(test: true)
         
         // Test Creation
         let entry = model.createEntry(date: dateCurrent, start: dateCurrent, end: dateCurrent, pay: pay)
