@@ -16,9 +16,33 @@ struct BlockCreationUIView: View {
     @State var timeEnd: Date = Date()
     @State var pay: Double = 0
     
+    @State private var showingAlert = false
+    @State private var errorMesage: String = ""
+    
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
+    
+    func CreateEntryClicked() {
+        // confirm inputs filled
+        errorMesage = ""
+        if (pay <= 0) {
+            errorMesage += "Pay: missing amount\n"
+        }
+        if (timeEnd.toTimeString() == timeStart.toTimeString()) {
+            errorMesage += "End Time: is equal to start time\n"
+        }
+        // Alert
+        if (errorMesage.count > 0) {
+            showingAlert = true
+            return
+        }
+        // Add Entry
+        viewModel.addEntryClicked(date: date, start: timeStart, end: timeEnd, pay: pay)
+        // Segue
+        self.presentation.wrappedValue.dismiss()
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -100,14 +124,19 @@ struct BlockCreationUIView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        // Onclick: Add Entry and Rollback to View
-                        viewModel.addEntryClicked(date: date, start: timeStart, end: timeEnd, pay: pay)
-                        self.presentation.wrappedValue.dismiss()
+                        CreateEntryClicked()
                     } label: {
                         Label("Create Entry", systemImage: "plus")
                     }
                 }
             }
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(
+                title: Text("Problem Creating Entry"),
+                message: Text(errorMesage),
+                dismissButton: .cancel()
+            )
         }
     }
 }

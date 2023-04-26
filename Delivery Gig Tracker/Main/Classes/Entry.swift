@@ -35,7 +35,10 @@ class Entry: ObservableObject {
             // Convert Minutes to Hours
             let minutes = ((endHours * 60) + endMinutes) - ((startHours * 60) + startMinutes)
             let hours: Double = Double(minutes / 60)
-            return round(hours * 100) / 100.0 // to 2 decimal places: 00.00
+            var span = round(hours * 100) / 100.0 // to 2 decimal places: 00.00
+            // Check midnight roll over
+            if (span < 0) {span = 24 + span}
+            return span
         }
     }
     
