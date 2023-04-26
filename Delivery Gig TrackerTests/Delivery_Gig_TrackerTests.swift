@@ -34,6 +34,24 @@ final class Delivery_Gig_TrackerTests: XCTestCase {
         XCTAssertTrue(model.entries[1].id == b.id)
         XCTAssertTrue(model.entries[2].id == c.id)
     }
+    
+    func testEntryIsCompleted() throws {
+        let model = EntriesModel(test: true)
+        // Create Test Entries
+        let entryCompleted = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        entryCompleted.route.route = "Test"
+        entryCompleted.route.timeEnd = Date().toDateString()
+        
+        let entryMissingRouteLabel = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        entryMissingRouteLabel.route.timeEnd = Date().toDateString()
+        
+        let entryMissingEndTime = model.createEntry(date: Date(), start: Date(), end: Date(), pay: 1)
+        entryMissingEndTime.route.route = "Test3"
+        // Assert
+        XCTAssertTrue(entryCompleted.isCompleted == true)
+        XCTAssertTrue(entryMissingRouteLabel.isCompleted == false)
+        XCTAssertTrue(entryMissingEndTime.isCompleted == false)
+    }
 
     func testCreateEntry() throws {
         // This is an example of a functional test case.

@@ -10,6 +10,10 @@ import SwiftUI
 struct BlockInfoCellUIView: View {
     @ObservedObject var entry: Entry
     
+    let isCurrentDate: Bool
+    @State var fontColor: Color = Color.primary
+    @State var dateColor: Color = Color.primary
+    
     @State var date: String = ""
     @State var time: String = ""
     @State var hours: Double = 0
@@ -18,6 +22,7 @@ struct BlockInfoCellUIView: View {
     
     init(entry: Entry) {
         self.entry = entry
+        self.isCurrentDate = entry.date == Date().toDateString()
         loadEntryData()
     }
     
@@ -27,16 +32,47 @@ struct BlockInfoCellUIView: View {
         hours = entry.hoursBlock
         pay = entry.pay
         route = entry.routing
+        // UI
+        fontColor =
+            (entry.isCompleted) ?
+            Color.secondary :
+            Color.primary
+        dateColor =
+            (isCurrentDate && !entry.isCompleted) ?
+            Color.blue : fontColor
     }
     
     var body: some View {
-        HStack {
-            Text(date)
-            Text(time)
-            Text(String(hours) )
-            Text("$\(String(format: "%.2f", pay))")
-            Text(route)
+        GeometryReader { metrics in
+            HStack(spacing:0){
+                Text(date)
+                    .foregroundColor(dateColor)
+                    .fontWeight(.semibold)
+                    .frame(width: metrics.size.width * 0.14, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 4)
+                
+                Text(time)
+                    .frame(width: metrics.size.width * 0.12, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 4)
+                
+                Text( "\(String(format:"%.1f", hours)) hr" )
+                    .frame(width: metrics.size.width * 0.18, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 4)
+                
+                Text("$\(String(format: "%.2f", pay))")
+                    .frame(width: metrics.size.width * 0.18, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 4)
+                
+                Text(route)
+                    .frame(width: metrics.size.width * 0.38, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 4)
+                    .lineLimit(1)
+                
+            }
+            .font(.system(size: 13))
+            .foregroundColor(fontColor)
         }
+        
         .onAppear() {loadEntryData()}
     }
 }

@@ -47,8 +47,10 @@ struct RouteInfoUIView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HeaderText("Full Route Information")
                 blockUI
                 routeUI
+                Spacer()
             }
             .onAppear() {loadEntryData()}
         }
@@ -171,6 +173,7 @@ struct RouteInfoUIView: View {
                         .stroke(.black, lineWidth: 1)
                 )
             }
+            Spacer()
             // Buttons
             HStack {
                 Button {

@@ -47,6 +47,14 @@ class Entry: ObservableObject {
         get { return route.route ?? ""}
     }
     
+    var isCompleted: Bool {
+        // Confirm all Route data has been filled
+        get {
+            return route.timeEnd != nil && (route.route != nil && route.route?.count ?? 0 > 0)
+        }
+    }
+    
+    
     init(block: BlockEntity, route: RouteEntity) {
         self.block = block
         self.route = route

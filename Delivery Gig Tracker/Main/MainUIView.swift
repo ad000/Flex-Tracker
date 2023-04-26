@@ -14,25 +14,28 @@ struct MainUIView: View {
     
     var body: some View {
         NavigationView {
-            // Block Cells
-            List {
-                ForEach(viewModel.entries, id: \.id) { entry in
-                    
+            VStack {
+                HeaderText("Route Tracker")
+                // Block Cells
+                List {
+                    ForEach(viewModel.entries, id: \.id) { entry in
+                        
                         NavigationLink(
                             destination: RouteInfoUIView(entry: entry)
                         ) {
                             BlockInfoCellUIView(entry: entry)
                         }
-                }
-                .onDelete(perform: viewModel.deleteEntryClicked)
-            }
-            .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: BlockCreationUIView(viewModel: viewModel)) {
-                        Label("Add Entry", systemImage: "plus")
                     }
+                    .onDelete(perform: viewModel.deleteEntryClicked)
                 }
-                
+                .toolbar {
+                    ToolbarItem {
+                        NavigationLink(destination: BlockCreationUIView(viewModel: viewModel)) {
+                            Label("Add Entry", systemImage: "plus")
+                        }
+                    }
+                    
+                }
             }
         }
     }

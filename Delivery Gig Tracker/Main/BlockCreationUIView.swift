@@ -24,8 +24,7 @@ struct BlockCreationUIView: View {
         NavigationView {
             VStack {
                 // Label
-                Text("Create New Block Info")
-                    .foregroundColor(.gray)
+                HeaderText("Create New Block")
                 // Input Stack
                 HStack {
                     // Date Input
@@ -94,6 +93,7 @@ struct BlockCreationUIView: View {
                     )
                     
                 }
+                Spacer()
                 
             }
             .padding()

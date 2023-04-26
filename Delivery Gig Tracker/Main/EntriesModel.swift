@@ -33,7 +33,6 @@ class EntriesModel: ObservableObject {
         }
         // For Each: Fetch Route Info
         for block in blocks {
-            print("\(block.date!), \(block.timeStart!)")
             let fetchRequest: NSFetchRequest<RouteEntity> = RouteEntity.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id == %@", block.id! as CVarArg) // Set Parameters
             do {
@@ -56,7 +55,7 @@ class EntriesModel: ObservableObject {
     func sortEntries() {
         // Sort by: Date > Time Start
         entries = entries.sorted(by: {
-            ($0.date, $0.timeStart) <
+            ($0.date, $0.timeStart) >
               ($1.date, $1.timeStart)
         })
     }
