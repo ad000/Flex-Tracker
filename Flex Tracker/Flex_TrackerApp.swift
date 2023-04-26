@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Delivery_Gig_TrackerApp: App {
+struct Flex_TrackerApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
