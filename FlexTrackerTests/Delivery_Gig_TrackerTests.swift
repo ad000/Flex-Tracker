@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Delivery_Gig_Tracker
+@testable import Flex_Tracker
 
 final class Delivery_Gig_TrackerTests: XCTestCase {
 

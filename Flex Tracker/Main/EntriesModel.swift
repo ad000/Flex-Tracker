@@ -15,8 +15,22 @@ class EntriesModel: ObservableObject {
     
     init(test: Bool = false) {
         if (!test) {fetchAllEntries()}
+        // Patch In Data
+        self.patchInData()
         // Sort
         sortEntries()
+    }
+    
+    private func patchInData() {
+        /*  Patch Data via CSV
+            If there are no entries, load in data from csv file
+         */
+        if (entries.count == 0) {
+            print("Patching in data set from CSV..")
+            let converter = CSVConverter("data")
+            entries = converter.data
+            save()
+        }
     }
     
     func fetchAllEntries() {

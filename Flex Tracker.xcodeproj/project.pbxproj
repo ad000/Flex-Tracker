@@ -14,6 +14,9 @@
 		6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */; };
 		6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */; };
 		6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */; };
+		604D735029FA05EF009817D3 /* CSVConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D734F29FA05EF009817D3 /* CSVConverter.swift */; };
+		604D735229FA0679009817D3 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 604D735129FA0679009817D3 /* data.csv */; };
+		604D735429FA0720009817D3 /* CSVConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735329FA0720009817D3 /* CSVConverterTests.swift */; };
 		6078160D29EDDFC300B3CB03 /* BlockInfoCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078160C29EDDFC300B3CB03 /* BlockInfoCellUIView.swift */; };
 		6078160F29EDE30800B3CB03 /* BlockCreationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078160E29EDE30800B3CB03 /* BlockCreationUIView.swift */; };
 		6078161129EDEE7900B3CB03 /* EntriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078161029EDEE7900B3CB03 /* EntriesModel.swift */; };
@@ -56,6 +59,9 @@
 		6000471F29D55E8200587C5C /* Flex TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flex TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITests.swift; sourceTree = "<group>"; };
 		6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		604D734F29FA05EF009817D3 /* CSVConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVConverter.swift; sourceTree = "<group>"; };
+		604D735129FA0679009817D3 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
+		604D735329FA0720009817D3 /* CSVConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVConverterTests.swift; sourceTree = "<group>"; };
 		6078160C29EDDFC300B3CB03 /* BlockInfoCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockInfoCellUIView.swift; sourceTree = "<group>"; };
 		6078160E29EDE30800B3CB03 /* BlockCreationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreationUIView.swift; sourceTree = "<group>"; };
 		6078161029EDEE7900B3CB03 /* EntriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesModel.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		6000470229D55E8100587C5C /* Flex Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				604D734E29FA05D3009817D3 /* _test */,
 				60B0A5E029F9D98900D0446E /* Flex-Tracker-Info.plist */,
 				6000470329D55E8100587C5C /* Flex_TrackerApp.swift */,
 				6000470C29D55E8200587C5C /* Persistence.swift */,
@@ -154,6 +161,16 @@
 				6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */,
 			);
 			path = FlexTrackerUITests;
+			sourceTree = "<group>";
+		};
+		604D734E29FA05D3009817D3 /* _test */ = {
+			isa = PBXGroup;
+			children = (
+				604D735129FA0679009817D3 /* data.csv */,
+				604D734F29FA05EF009817D3 /* CSVConverter.swift */,
+				604D735329FA0720009817D3 /* CSVConverterTests.swift */,
+			);
+			path = _test;
 			sourceTree = "<group>";
 		};
 		6078160B29EA05A300B3CB03 /* Main */ = {
@@ -287,6 +304,7 @@
 			files = (
 				6000470B29D55E8200587C5C /* Preview Assets.xcassets in Resources */,
 				6000470829D55E8200587C5C /* Assets.xcassets in Resources */,
+				604D735229FA0679009817D3 /* data.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +333,7 @@
 				6000470D29D55E8200587C5C /* Persistence.swift in Sources */,
 				608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */,
 				6078160F29EDE30800B3CB03 /* BlockCreationUIView.swift in Sources */,
+				604D735029FA05EF009817D3 /* CSVConverter.swift in Sources */,
 				6000470429D55E8100587C5C /* Flex_TrackerApp.swift in Sources */,
 				6078161829EF366700B3CB03 /* DateFormatter.swift in Sources */,
 				608076B529E9F346007D7872 /* MainUIView.swift in Sources */,
@@ -333,6 +352,7 @@
 			files = (
 				6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */,
 				6078161A29EF382D00B3CB03 /* DateExtensionTests.swift in Sources */,
+				604D735429FA0720009817D3 /* CSVConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +507,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flex Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
@@ -520,6 +541,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flex Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
