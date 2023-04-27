@@ -15,22 +15,8 @@ class EntriesModel: ObservableObject {
     
     init(test: Bool = false) {
         if (!test) {fetchAllEntries()}
-        // Patch In Data
-        self.patchInData()
         // Sort
         sortEntries()
-    }
-    
-    private func patchInData() {
-        /*  Patch Data via CSV
-            If there are no entries, load in data from csv file
-         */
-        if (entries.count == 0) {
-            print("Patching in data set from CSV..")
-            let converter = CSVConverter("data")
-            entries = converter.data
-            save()
-        }
     }
     
     func fetchAllEntries() {
@@ -63,7 +49,32 @@ class EntriesModel: ObservableObject {
                 debugPrint(error)
             }
         }
+    }
+    
+    func deleteAllData() {
+        let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
+        do {
+            let results = try context.fetch(fetchRequest) as [BlockEntity]
+            print("\tCore: BlockEntity fetched, count:", results.count)
+            for block in results {
+                context.delete(block)
+            }
+        }
+        catch {
+            debugPrint(error)
+        }
         
+        let fetchRequest2: NSFetchRequest<RouteEntity> = RouteEntity.fetchRequest()
+        do {
+            let results = try context.fetch(fetchRequest2) as [RouteEntity]
+            print("\tCore: RouteEntity fetched, count:", results.count)
+            for route in results {
+                context.delete(route)
+            }
+        }
+        catch {
+            debugPrint(error)
+        }
     }
     
     func sortEntries() {
@@ -81,6 +92,7 @@ class EntriesModel: ObservableObject {
         block.date = date.toDateString()
         block.timeStart = start.toTimeString()
         block.timeEnd = end.toTimeString()
+        block.hours = Date().getHoursFromTimeStrings(start: block.timeStart!, end: block.timeEnd!)
         block.pay = pay
         // Create BlockInfo
         let route = RouteEntity(context: context)

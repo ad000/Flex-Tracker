@@ -29,7 +29,7 @@ struct BlockInfoCellUIView: View {
     func loadEntryData() {
         date = entry.date
         time = entry.timeStart
-        hours = entry.hoursBlock
+        hours = entry.hours
         pay = entry.pay
         route = entry.routing
         // UI

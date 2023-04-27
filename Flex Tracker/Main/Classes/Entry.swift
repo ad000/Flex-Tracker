@@ -25,21 +25,16 @@ class Entry: ObservableObject {
         get { return block.timeEnd!}
     }
     
-    var hoursBlock: Double {
-        get {
-            // Get total Minutes
-            let startHours = Double(timeStart.prefix(2))!
-            let startMinutes = Double(timeStart.suffix(2))!
-            let endHours = Double(timeEnd.prefix(2))!
-            let endMinutes = Double(timeEnd.suffix(2))!
-            // Convert Minutes to Hours
-            let minutes = ((endHours * 60) + endMinutes) - ((startHours * 60) + startMinutes)
-            let hours: Double = Double(minutes / 60)
-            var span = round(hours * 100) / 100.0 // to 2 decimal places: 00.00
-            // Check midnight roll over
-            if (span < 0) {span = 24 + span}
-            return span
-        }
+    var timeCompleted: String {
+        get { return route.timeEnd!}
+    }
+    
+    var hours: Double {
+        get { return block.hours }
+    }
+    
+    var hoursCompleted: Double {
+        return Date().getHoursFromTimeStrings(start: timeStart, end: timeCompleted)
     }
     
     var pay: Double {
@@ -50,10 +45,18 @@ class Entry: ObservableObject {
         get { return route.route ?? ""}
     }
     
+    var milage: Double {
+        get { return route.milage }
+    }
+    
+    var milageReturn: Double {
+        get { return route.milageReturn }
+    }
+    
     var isCompleted: Bool {
         // Confirm all Route data has been filled
         get {
-            return route.timeEnd != nil && (route.route != nil && route.route?.count ?? 0 > 0)
+            return milage > 0 && milageReturn > 0 && route.timeEnd != nil && (route.route != nil && route.route?.count ?? 0 > 0)
         }
     }
     
@@ -63,6 +66,14 @@ class Entry: ObservableObject {
         self.route = route
         self.id = block.id!
     }
+    
+    func update(routeName: String, end: Date, milage: Double, milageReturn: Double) {
+        self.route.route = routeName
+        self.route.timeEnd = end.toTimeString()
+        self.route.milage = milage
+        self.route.milageReturn = milageReturn
+    }
+        
     
     func save() {
         let context = PersistenceController.shared.container.viewContext

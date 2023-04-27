@@ -48,6 +48,7 @@ class CSVConverter {
             let date: Date = Date().dateStringToDate(dateString: columns[0])!
             let start: Date = Date().timeStringToDate(timeString: columns[1])!
             let end: Date = Date().timeStringToDate(timeString: columns[2])!
+            let hours: Double = Date().getHoursFromTimeStrings(start: start.toTimeString(), end: end.toTimeString())
             let pay: Double = Double(columns[5]) ?? 0
             let routeName: String = columns[6]
             let endFinal: Date = Date().timeStringToDate(timeString: columns[7]) ?? end
@@ -59,6 +60,7 @@ class CSVConverter {
             block.date = date.toDateString()
             block.timeStart = start.toTimeString()
             block.timeEnd = end.toTimeString()
+            block.hours = hours
             block.pay = pay
             // Create BlockInfo
             let route = RouteEntity(context: context)
