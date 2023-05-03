@@ -26,11 +26,14 @@ struct BlockCreationUIView: View {
     func CreateEntryClicked() {
         // confirm inputs filled
         errorMesage = ""
-        if (pay <= 0) {
+        if (pay <= 0) { // Missing Pay
             errorMesage += "Pay: missing amount\n"
         }
-        if (timeEnd.toTimeString() == timeStart.toTimeString()) {
+        if (timeEnd.toTimeString() == timeStart.toTimeString()) { // Times Are Equal
             errorMesage += "End Time: is equal to start time\n"
+        }
+        if (viewModel.model.checkEntryExists(date: date, time: timeStart)) { // Date+Time Exists
+             errorMesage += "Entry already exists with date and time\n"
         }
         // Alert
         if (errorMesage.count > 0) {

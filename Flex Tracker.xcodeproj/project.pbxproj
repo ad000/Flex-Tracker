@@ -32,6 +32,7 @@
 		608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */; };
 		608076B529E9F346007D7872 /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B429E9F346007D7872 /* MainUIView.swift */; };
 		608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B629E9F6E4007D7872 /* ViewModel.swift */; };
+		6083D4E22A030C77001DC1C7 /* EntryCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */; };
 		60B0A5E329F9E25C00D0446E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 60B0A5E229F9E25C00D0446E /* Documentation.docc */; };
 		60D1229F29F9C77900030524 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1229E29F9C77900030524 /* UIElements.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		608076B229E9EEB3007D7872 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		608076B429E9F346007D7872 /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		608076B629E9F6E4007D7872 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCoreDataTests.swift; sourceTree = "<group>"; };
 		60B0A5E029F9D98900D0446E /* Flex-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flex-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
 		60B0A5E229F9E25C00D0446E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		60D1229E29F9C77900030524 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */,
 				6078161929EF382D00B3CB03 /* DateExtensionTests.swift */,
 				604D735729FA1962009817D3 /* EntryAnalysisTests.swift */,
+				6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */,
 			);
 			path = FlexTrackerTests;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */,
 				6078161A29EF382D00B3CB03 /* DateExtensionTests.swift in Sources */,
 				604D735429FA0720009817D3 /* CSVConverterTests.swift in Sources */,
+				6083D4E22A030C77001DC1C7 /* EntryCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

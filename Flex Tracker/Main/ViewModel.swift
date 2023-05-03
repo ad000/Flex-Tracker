@@ -11,14 +11,22 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var model: EntriesModel
+    @Published var canLoadMore: Bool = true
+    
+    var entries: [Entry] {
+        get {return model.entries}
+    }
     
     init() {
         print("init ViewModel")
         model = EntriesModel()
     }
     
-    var entries: [Entry] {
-        get {return model.entries}
+    func LoadMoreEntries() {
+        self.canLoadMore = model.loadMoreEntries()
+        print("\(model.entries.count)/\(model.totalEntryCount)", canLoadMore)
+        // Update View
+        self.objectWillChange.send()
     }
     
     func addEntryClicked(date: Date, start: Date, end: Date, pay: Double) {

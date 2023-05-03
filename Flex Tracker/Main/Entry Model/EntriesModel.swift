@@ -12,46 +12,128 @@ class EntriesModel: ObservableObject {
     let context = PersistenceController.shared.container.viewContext
     
     @Published var entries: [Entry] = []
+    var totalEntryCount: Int = 0
+    var currentOffet: Int = 0
+    let FETCHCOUNT = 12
     
     init(test: Bool = false) {
-        if (!test) {fetchAllEntries()}
+        fetchTotalEntryCount()
+        if (!test) {_ = loadMoreEntries()}
         // Sort
         sortEntries()
     }
     
-    func fetchAllEntries() {
-        var blocks: [BlockEntity] = []
-        // Fetch Block
-        let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
+    func loadMoreEntries() -> Bool {
+        // Return Bool: Can Load More
+        if (currentOffet >= totalEntryCount) {
+            print("ENTRIES AT MAX", totalEntryCount)
+            return false
+        }
+        // Fetch More
+        let entries = fetchEntries(count: FETCHCOUNT, offset: currentOffet)
+        // Add to List
+        for entry in entries {
+            addEntry(entry: entry)
+        }
+        // Update Offset
+        currentOffet += FETCHCOUNT
+        return currentOffet < totalEntryCount
+    }
+    
+    func fetchTotalEntryCount() {
+        let userFetchRequest = NSFetchRequest<NSNumber>(entityName: "BlockEntity")
+        userFetchRequest.resultType = .countResultType
         do {
-            let results = try context.fetch(fetchRequest) as [BlockEntity]
-            print("\tCore: BlockEntity fetched, count:", results.count)
-            blocks = results
+            let counts: [NSNumber] = try! context.fetch(userFetchRequest)
+            totalEntryCount = counts[0] as! Int
+            print("Total Entries in Core Data:", totalEntryCount)
         }
-        catch {
-            debugPrint(error)
+    }
+    
+    func checkEntryExists(date: Date, time: Date) -> Bool {
+        // convert Dates to associated Strings
+        let dateString = date.toDateString()
+        let timeString = time.toTimeString()
+        print("checkEntryExists", dateString, timeString)
+        // Fetch
+        let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "date == %@ AND timeStart == %@", dateString, timeString)
+        do {
+            let count = try context.count(for: fetchRequest)
+            if count  == 0 {return false}
+        } catch {
+            print("Error: \(error)")
         }
-        // For Each: Fetch Route Info
-        for block in blocks {
-            let fetchRequest: NSFetchRequest<RouteEntity> = RouteEntity.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "id == %@", block.id! as CVarArg) // Set Parameters
-            do {
-                let routes = try context.fetch(fetchRequest) as [RouteEntity]
-                if routes.count == 0 { print("\(block.id!): \(block.date!): MISSING ROUTE ENTITY") }
-                else {
-                    let route = routes[0]
-                    // Create and Add Entry
-                    let entry = Entry(block: block, route: route)
-                    entries.append(entry)
-                }
+        return true // Default to Existing
+    }
+    
+    private func fetchBlocks(sortParameter: [String] = [], limitCount: Int? = nil, offsetIndex: Int? = nil) -> [BlockEntity] {
+        var blocks: [BlockEntity] = []
+        // fetch
+        let request: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
+        if (limitCount != nil) {request.fetchLimit = limitCount!}
+        if (offsetIndex != nil) {request.fetchOffset = offsetIndex!}
+        // Sorting
+        var sortingParameters: [NSSortDescriptor] = []
+        for parameter in sortParameter {
+            sortingParameters.append( NSSortDescriptor(key: parameter, ascending: false) )
+        }
+        if (sortingParameters.count > 0) {
+            request.sortDescriptors = sortingParameters
+        }
+        do {
+            blocks = try context.fetch(request)
+            // print("\tCore: BlockEntity fetched, count:", results.count)
+        } catch { debugPrint(error) }
+        return blocks
+    }
+    
+    private func fetchRoute(id: UUID) -> RouteEntity? {
+        let fetchRequest: NSFetchRequest<RouteEntity> = RouteEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg) // Set Parameters
+        do {
+            let routes = try context.fetch(fetchRequest) as [RouteEntity]
+            if routes.count == 0 { print("\(id): MISSING ROUTE ENTITY") }
+            else {
+                return routes[0]
             }
-            catch {
-                debugPrint(error)
+        }
+        catch {  debugPrint(error) }
+        return nil
+    }
+    
+    func fetchAllEntries() {
+        // Fetch Blocks
+        var blocks: [BlockEntity] = fetchBlocks()
+        // Fetch Matching Route Info
+        for block in blocks {
+            if let route = fetchRoute(id: block.id!) {
+                // Create and Add Entry
+                let entry = Entry(block: block, route: route)
+                entries.append(entry)
             }
         }
     }
     
+    func fetchEntries(count: Int, offset: Int) -> [Entry] {
+        var list: [Entry] = []
+        // Fetch portion of Entries based on starting index and count
+        let blocks = fetchBlocks(sortParameter: ["date", "timeStart"], limitCount: count, offsetIndex: offset)
+        // Fetch Matching Route Info
+        for block in blocks {
+            if let route = fetchRoute(id: block.id!) {
+                // Create and Add Entry
+                let entry = Entry(block: block, route: route)
+                list.append(entry)
+            }
+        }
+        return list
+    }
+    
     func deleteAllData() {
+        // Local Data
+        entries.removeAll()
+        // Core Data
         let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
         do {
             let results = try context.fetch(fetchRequest) as [BlockEntity]
@@ -99,6 +181,7 @@ class EntriesModel: ObservableObject {
         route.id = block.id
         // Create Entry Object
         let entry = Entry(block: block, route: route)
+        totalEntryCount += 1
         // return
         return entry
     }
@@ -115,6 +198,7 @@ class EntriesModel: ObservableObject {
         if let index = entries.firstIndex(where: {$0.id == entry.id}) {
             entries.remove(at: index)
         }
+        totalEntryCount -= 1
         // Delete From CoreData
         context.delete(entry.block)
         context.delete(entry.route)

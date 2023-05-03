@@ -27,6 +27,18 @@ struct MainUIView: View {
                         }
                     }
                     .onDelete(perform: viewModel.deleteEntryClicked)
+                    
+                    if(viewModel.canLoadMore) {
+                        Button {
+                            viewModel.LoadMoreEntries()
+                        } label: {
+                            Text("Load More")
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 16)
+                                .background(.tertiary)
+                                .clipShape(Capsule())
+                        }
+                    }
                 }
                 .toolbar {
                     ToolbarItem {
