@@ -34,7 +34,10 @@ final class EntryAnalysisTests: XCTestCase {
         entry3.update(routeName: "Portland", end: Date().timeStringToDate(timeString: "05:00")!, milage: 30, milageReturn: 6)
        
         // Analyze
-        let analysis = model.getHourAnalysis(4.0)
+        let analyzeModel = AnalysisModel()
+        analyzeModel.setAnalysis(4.0)
+        let analysis = analyzeModel.analysis
+        
         print(analysis.toString())
         // Test
         assert(analysis.hoursCompletedAverage == 3.0)

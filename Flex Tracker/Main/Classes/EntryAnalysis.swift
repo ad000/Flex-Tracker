@@ -8,25 +8,25 @@
 import Foundation
 
 
-class EntryAnalysis {
-    var entries: [Entry] = []
+class EntryAnalysis: ObservableObject {
+    @Published var entries: [Entry] = []
     // Hours Completed
-    var hoursCompletedTotal: Double = 0
-    var hoursCompletedAverage: Double = 0
-    var hoursCompletedMin: Double = Double.greatestFiniteMagnitude
-    var hoursCompletedMax: Double = 0
+    @Published var hoursCompletedTotal: Double = 0
+    @Published var hoursCompletedAverage: Double = 0
+    @Published var hoursCompletedMin: Double = Double.greatestFiniteMagnitude
+    @Published var hoursCompletedMax: Double = 0
     // Milage
-    var milageTotal: Double = 0
-    var milageAverage: Double = 0
-    var milageMin: Double = Double.greatestFiniteMagnitude
-    var milageMax: Double = 0
+    @Published var milageTotal: Double = 0
+    @Published var milageAverage: Double = 0
+    @Published var milageMin: Double = Double.greatestFiniteMagnitude
+    @Published var milageMax: Double = 0
     // Milage Return
-    var milageReturnTotal: Double = 0
-    var milageReturnAverage: Double = 0
-    var milageReturnMin: Double = Double.greatestFiniteMagnitude
-    var milageReturnMax: Double = 0
+    @Published var milageReturnTotal: Double = 0
+    @Published var milageReturnAverage: Double = 0
+    @Published var milageReturnMin: Double = Double.greatestFiniteMagnitude
+    @Published var milageReturnMax: Double = 0
     // Routes
-    var routes: [String] = []
+    @Published var routes: [String] = []
     
     init() {}
     
@@ -66,7 +66,10 @@ class EntryAnalysis {
     }
     
     func parseRoute(_ routing: String) {
-        if !routes.contains(routing) {routes.append(routing)}
+        if !routes.contains(routing) {
+            routes.append(routing)
+            routes = routes.sorted()
+        }
     }
     
     

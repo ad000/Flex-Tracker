@@ -1,5 +1,5 @@
 //
-//  EntriesModel-Analysis.swift
+//  AnalysisModel.swift
 //  Flex Tracker
 //
 //  Created by Archael dela Rosa on 4/26/23.
@@ -8,21 +8,48 @@
 import Foundation
 import CoreData
 
-
-extension EntriesModel {
+class AnalysisModel: ObservableObject {
+    let context = PersistenceController.shared.container.viewContext
     
-    func getHourAnalysis(_ hour: Double) -> EntryAnalysis {
-        let analysis = EntryAnalysis()
-        // Fetch (COMPLETED) Entries with matching Hours
+    @Published var analysis: EntryAnalysis
+    
+    init() {
+        analysis = EntryAnalysis()
+    }
+    
+    public func setAnalysis(_ hour: Double) {
+        // Create New
+        analysis = EntryAnalysis()
+        // Fetch
         let entries: [Entry] = self.fetchEntriesBy(hour: hour)
         for entry in entries {
             analysis.add(entry)
         }
-        return analysis
     }
     
     
-    fileprivate func fetchEntriesBy(hour: Double) -> [Entry] {
+    func fetchHourOptions() -> [Double] {
+        // fetch options based on coreData
+        var options: [Double] = []
+        // Fetch Block
+        let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
+        do {
+            let results = try context.fetch(fetchRequest) as [BlockEntity]
+            print("FetchHourOptions:\tCore: BlockEntity fetched, count:", results.count)
+            for block in results {
+                if !options.contains(block.hours) {options.append(block.hours)}
+            }
+        }
+        catch {
+            debugPrint(error)
+        }
+        // Sort
+        options = options.sorted(by: {($0) < ($1)})
+        return options
+    }
+    
+    
+    private func fetchEntriesBy(hour: Double) -> [Entry] {
         var entries: [Entry] = []
         // Fetch Block
         var blocks: [BlockEntity] = []

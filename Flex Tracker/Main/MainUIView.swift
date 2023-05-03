@@ -36,6 +36,14 @@ struct MainUIView: View {
                     }
                     
                 }
+                NavigationLink(
+                    destination: AnalysisUIView()
+                ) {
+                    Text("Analyze Hour")
+                        .padding()
+                        .background(.tertiary)
+                        .clipShape(Capsule())
+                }
             }
         }
     }
