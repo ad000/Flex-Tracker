@@ -76,7 +76,9 @@ struct BlockCreationUIView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Pay:")
                                 .bold()
-                            TextField("0.00", value: $pay, format: .number) .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("0.00", value: $pay, format: .number)
+                                .keyboardType(.decimalPad)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
                         .padding(4)
                         .overlay(
