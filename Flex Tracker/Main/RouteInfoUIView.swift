@@ -46,13 +46,16 @@ struct RouteInfoUIView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HeaderText("Full Route Information")
-                blockUI
-                routeUI
-                Spacer()
+            ScrollView {
+                VStack {
+                    HeaderText("Full Route Information")
+                    blockUI
+                    routeUI
+                    Spacer()
+                }
+                .onAppear() {loadEntryData()}
             }
-            .onAppear() {loadEntryData()}
+            
         }
     }
     
