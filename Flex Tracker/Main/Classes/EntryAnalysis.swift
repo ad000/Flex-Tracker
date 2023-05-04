@@ -26,7 +26,7 @@ class EntryAnalysis: ObservableObject {
     @Published var milageReturnMin: Double = Double.greatestFiniteMagnitude
     @Published var milageReturnMax: Double = 0
     // Routes
-    @Published var routes: [String] = []
+    @Published var routes = [String: Int]()
     
     init() {}
     
@@ -66,9 +66,11 @@ class EntryAnalysis: ObservableObject {
     }
     
     func parseRoute(_ routing: String) {
-        if !routes.contains(routing) {
-            routes.append(routing)
-            routes = routes.sorted()
+        let routeString = routing.trimmingCharacters(in: .whitespacesAndNewlines) // trim excess spacing
+        if let _ = routes[routeString] {
+            routes[routeString]! += 1
+        } else {
+            routes[routeString] = 1
         }
     }
     

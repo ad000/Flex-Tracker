@@ -68,7 +68,7 @@ class Entry: ObservableObject {
     }
     
     func update(routeName: String, end: Date, milage: Double, milageReturn: Double) {
-        self.route.route = routeName
+        self.route.route = routeName.trimmingCharacters(in: .whitespacesAndNewlines)
         self.route.timeEnd = end.toTimeString()
         self.route.milage = milage
         self.route.milageReturn = milageReturn

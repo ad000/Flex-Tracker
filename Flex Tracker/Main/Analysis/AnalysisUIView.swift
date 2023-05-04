@@ -202,9 +202,17 @@ struct AnalysisUIView: View {
     var routeList: some View {
         VStack {
             List {
-                ForEach(analysis.routes, id: \.self) { route in
-                    Text(route)
-                        .font(.system(size: 14))
+                ForEach(analysis.routes.sorted(by: <), id: \.key) { route, count in
+                    HStack{
+                        Text(route)
+                            .font(.system(size: 14))
+                        Spacer()
+                        Text(String(count))
+                            .font(.system(size: 14))
+                        Text(String(viewModel.model.getRoutePercent(route: route))+"%")
+                            .font(.system(size: 14))
+                        
+                    }
                 }
             }
             .cornerRadius(4)

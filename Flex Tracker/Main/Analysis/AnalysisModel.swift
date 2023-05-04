@@ -48,6 +48,17 @@ class AnalysisModel: ObservableObject {
         return options
     }
     
+    func getRoutePercent(route: String) -> Int {
+        if let count = analysis.routes[route] {
+            let total = Double(analysis.entries.count)
+            return Int(100 * Double(count) / total)
+        }
+        else {
+            return 0
+        }
+    }
+    
+    
     
     private func fetchEntriesBy(hour: Double) -> [Entry] {
         var entries: [Entry] = []
