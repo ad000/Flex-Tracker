@@ -14,7 +14,7 @@ class ViewModel: ObservableObject {
     @Published var canLoadMore: Bool = true
     
     var entries: [Entry] {
-        get {return model.entries}
+        get {return model.entryList.entries}
     }
     
     init() {
@@ -24,7 +24,7 @@ class ViewModel: ObservableObject {
     
     func LoadMoreEntries() {
         self.canLoadMore = model.loadMoreEntries()
-        print("\(model.entries.count)/\(model.totalEntryCount)", canLoadMore)
+        print("\(model.entryList.count)/\(model.totalEntryCount)", canLoadMore)
         // Update View
         self.objectWillChange.send()
     }
@@ -33,7 +33,7 @@ class ViewModel: ObservableObject {
         // Create Entry
         let entry = model.createEntry(date: date, start: start, end: end, pay: pay)
         // Add
-        model.addEntry(entry: entry)
+        model.entryList.add(entry: entry)
         // Save
         model.save()
         // Update View
@@ -42,8 +42,7 @@ class ViewModel: ObservableObject {
     
     func deleteEntryClicked(at offsets: IndexSet) {
         if let index = offsets.first {
-            let entry: Entry = model.entries[index]
-            model.deleteEntry(entry: entry)
+            model.deleteEntry(index: index)
             // Save
             model.save()
             // Update View

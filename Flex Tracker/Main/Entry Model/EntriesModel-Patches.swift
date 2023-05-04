@@ -16,10 +16,12 @@ extension EntriesModel {
         /*  Patch Data via CSV
             If there are no entries, load in data from csv file
          */
-        if (entries.count == 0) {
+        if (entryList.count == 0) {
             print("Patching in data set from CSV..")
             let converter = CSVConverter("data")
-            entries = converter.data
+            for entry in converter.data {
+                entryList.add(entry: entry)
+            }
             save()
         }
     }

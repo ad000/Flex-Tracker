@@ -33,6 +33,7 @@
 		608076B529E9F346007D7872 /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B429E9F346007D7872 /* MainUIView.swift */; };
 		608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B629E9F6E4007D7872 /* ViewModel.swift */; };
 		6083D4E22A030C77001DC1C7 /* EntryCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */; };
+		6083D4E42A044F60001DC1C7 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083D4E32A044F60001DC1C7 /* EntryList.swift */; };
 		60B0A5E329F9E25C00D0446E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 60B0A5E229F9E25C00D0446E /* Documentation.docc */; };
 		60D1229F29F9C77900030524 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1229E29F9C77900030524 /* UIElements.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		608076B429E9F346007D7872 /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		608076B629E9F6E4007D7872 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCoreDataTests.swift; sourceTree = "<group>"; };
+		6083D4E32A044F60001DC1C7 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
 		60B0A5E029F9D98900D0446E /* Flex-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flex-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
 		60B0A5E229F9E25C00D0446E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		60D1229E29F9C77900030524 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				6078161229EDEEF800B3CB03 /* Entry.swift */,
 				604D735929FB217A009817D3 /* EntryAnalysis.swift */,
+				6083D4E32A044F60001DC1C7 /* EntryList.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				604D735629FA166A009817D3 /* AnalysisModel.swift in Sources */,
 				604D735D29FB2DD9009817D3 /* EntriesModel-Patches.swift in Sources */,
 				604D736029FB3288009817D3 /* AnalysisUIView.swift in Sources */,
+				6083D4E42A044F60001DC1C7 /* EntryList.swift in Sources */,
 				6078160D29EDDFC300B3CB03 /* BlockInfoCellUIView.swift in Sources */,
 				6078161629EE201100B3CB03 /* RouteInfoUIView.swift in Sources */,
 				60B0A5E329F9E25C00D0446E /* Documentation.docc in Sources */,

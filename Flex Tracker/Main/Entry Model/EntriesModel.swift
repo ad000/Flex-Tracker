@@ -11,16 +11,15 @@ import CoreData
 class EntriesModel: ObservableObject {
     let context = PersistenceController.shared.container.viewContext
     
-    @Published var entries: [Entry] = []
+    @Published var entryList: EntryList
     var totalEntryCount: Int = 0
     var currentOffet: Int = 0
     let FETCHCOUNT = 12
     
     init(test: Bool = false) {
+        self.entryList = EntryList()
         fetchTotalEntryCount()
         if (!test) {_ = loadMoreEntries()}
-        // Sort
-        sortEntries()
     }
     
     func loadMoreEntries() -> Bool {
@@ -33,7 +32,7 @@ class EntriesModel: ObservableObject {
         let entries = fetchEntries(count: FETCHCOUNT, offset: currentOffet)
         // Add to List
         for entry in entries {
-            addEntry(entry: entry)
+            entryList.add(entry: entry)
         }
         // Update Offset
         currentOffet += FETCHCOUNT
@@ -102,19 +101,6 @@ class EntriesModel: ObservableObject {
         return nil
     }
     
-    func fetchAllEntries() {
-        // Fetch Blocks
-        var blocks: [BlockEntity] = fetchBlocks()
-        // Fetch Matching Route Info
-        for block in blocks {
-            if let route = fetchRoute(id: block.id!) {
-                // Create and Add Entry
-                let entry = Entry(block: block, route: route)
-                entries.append(entry)
-            }
-        }
-    }
-    
     func fetchEntries(count: Int, offset: Int) -> [Entry] {
         var list: [Entry] = []
         // Fetch portion of Entries based on starting index and count
@@ -130,9 +116,22 @@ class EntriesModel: ObservableObject {
         return list
     }
     
+    func fetchAllEntries() {
+        // Fetch Blocks
+        let blocks: [BlockEntity] = fetchBlocks()
+        // Fetch Matching Route Info
+        for block in blocks {
+            if let route = fetchRoute(id: block.id!) {
+                // Create and Add Entry
+                let entry = Entry(block: block, route: route)
+                entryList.add(entry: entry)
+            }
+        }
+    }
+    
     func deleteAllData() {
         // Local Data
-        entries.removeAll()
+        entryList.removeAll()
         // Core Data
         let fetchRequest: NSFetchRequest<BlockEntity> = BlockEntity.fetchRequest()
         do {
@@ -159,14 +158,6 @@ class EntriesModel: ObservableObject {
         }
     }
     
-    func sortEntries() {
-        // Sort by: Date > Time Start
-        entries = entries.sorted(by: {
-            ($0.date, $0.timeStart) >
-              ($1.date, $1.timeStart)
-        })
-    }
-    
     func createEntry(date: Date, start: Date, end: Date, pay: Double) -> Entry {
         // Create EntryInfo
         let block = BlockEntity(context: context)
@@ -186,23 +177,19 @@ class EntriesModel: ObservableObject {
         return entry
     }
     
-    func addEntry(entry: Entry) {
-        // Add to List
-        entries.append(entry)
-        // Sort
-        sortEntries()
-    }
     
-    func deleteEntry(entry: Entry) {
+    func deleteEntry(index: Int) {
         // Remove From List
-        if let index = entries.firstIndex(where: {$0.id == entry.id}) {
-            entries.remove(at: index)
+        if let entry = entryList.remove(index: index) {
+            // Update Count
+            totalEntryCount -= 1
+            // Delete From CoreData
+            context.delete(entry.block)
+            context.delete(entry.route)
+            print("REMOVED: \(entry.id) : \(entry.date)")
+        } else {
+            print("deleteEntry: Cant find index \(index) to delete")
         }
-        totalEntryCount -= 1
-        // Delete From CoreData
-        context.delete(entry.block)
-        context.delete(entry.route)
-        print("REMOVED: \(entry.id) : \(entry.date)")
     }
     
     func save() {
