@@ -30,6 +30,11 @@ Error alert on creation with missing input data
 - Route Information
 Display Block information and Modification of Route data
 
+- Entry Analysis (Hour)
+Display Analysis of entries based on selecte block hours.
+Average, min, max of Completed hours, milage
+Route destinations and their occurance count/percent of total
+
 
 ## Testing
 

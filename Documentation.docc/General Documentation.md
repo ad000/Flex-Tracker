@@ -14,3 +14,7 @@ Create and Edit Route and Block Information
         Information on the Block session
     - Route [End Time, Milage, Milage To Home]
         Completion data inputed by user
+
+View Route Analysis (based on Hours)
+    - Average, min and max values of time and milage
+    - Routes and occurance count/percent
