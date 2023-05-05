@@ -17,9 +17,20 @@ class ViewModel: ObservableObject {
         get {return model.entryList.entries}
     }
     
+    var entriesByCurrentDate: [String: [Entry]] {
+        let currentDateString = Date().toDateString()
+        return Dictionary(grouping: model.entryList.entries, by: { ($0.date == currentDateString && !$0.isCompleted) ? "Today" : "Routes" })
+    }
+    
     init() {
         print("init ViewModel")
         model = EntriesModel()
+        canLoadMore = model.loadMoreEntries() // Load init entries and update bool
+    }
+    
+    func updateView() {
+        // Update View
+        self.objectWillChange.send()
     }
     
     func LoadMoreEntries() {
@@ -40,14 +51,26 @@ class ViewModel: ObservableObject {
         self.objectWillChange.send()
     }
     
-    func deleteEntryClicked(at offsets: IndexSet) {
+    func deleteCurrentlyActiveEntryClicked(at offsets: IndexSet) {
         if let index = offsets.first {
-            model.deleteEntry(index: index)
+            let entry = entriesByCurrentDate["Today"]![index]
+            model.deleteEntry(id: entry.id)
             // Save
             model.save()
             // Update View
             self.objectWillChange.send()
+        }
+    }
     
+    func deleteEntryClicked(at offsets: IndexSet) {
+        if let index = offsets.first {
+            let entry = entriesByCurrentDate["Routes"]![index]
+            model.deleteEntry(id: entry.id)
+            // Save
+            model.save()
+            // Update View
+            self.objectWillChange.send()
+            
         }
     }
     
