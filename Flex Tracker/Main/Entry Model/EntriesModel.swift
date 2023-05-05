@@ -19,7 +19,6 @@ class EntriesModel: ObservableObject {
     init(test: Bool = false) {
         self.entryList = EntryList()
         fetchTotalEntryCount()
-        if (!test) {_ = loadMoreEntries()}
     }
     
     func loadMoreEntries() -> Bool {
@@ -178,17 +177,19 @@ class EntriesModel: ObservableObject {
     }
     
     
-    func deleteEntry(index: Int) {
+    func deleteEntry(id: UUID) {
         // Remove From List
-        if let entry = entryList.remove(index: index) {
-            // Update Count
-            totalEntryCount -= 1
-            // Delete From CoreData
-            context.delete(entry.block)
-            context.delete(entry.route)
-            print("REMOVED: \(entry.id) : \(entry.date)")
-        } else {
-            print("deleteEntry: Cant find index \(index) to delete")
+        if let index = entryList.entries.firstIndex(where: {$0.id == id}) {
+            if let entry = entryList.remove(index: index) {
+                // Update Count
+                totalEntryCount -= 1
+                // Delete From CoreData
+                context.delete(entry.block)
+                context.delete(entry.route)
+                print("REMOVED: \(entry.id) : \(entry.date) \(entry.routing)")
+            } else {
+                print("deleteEntry: Cant find index \(index) to delete")
+            }
         }
     }
     

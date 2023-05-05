@@ -8,7 +8,7 @@
 import Foundation
 
 // Object holding entry data
-class Entry: ObservableObject {
+class Entry: Identifiable, ObservableObject {
     var id: UUID
     @Published var block: BlockEntity
     @Published var route: RouteEntity
