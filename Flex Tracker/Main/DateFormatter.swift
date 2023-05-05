@@ -58,4 +58,19 @@ extension Date {
         return date
     }
     
+    public func getHoursFromTimeStrings(start: String, end: String) -> Double {
+        // Get total Minutes
+        let startHours = Double(start.prefix(2))!
+        let startMinutes = Double(start.suffix(2))!
+        let endHours = Double(end.prefix(2))!
+        let endMinutes = Double(end.suffix(2))!
+        // Convert Minutes to Hours
+        let minutes = ((endHours * 60) + endMinutes) - ((startHours * 60) + startMinutes)
+        let hours: Double = Double(minutes / 60)
+        var span = round(hours * 100) / 100.0 // to 2 decimal places: 00.00
+        // Check midnight roll over
+        if (span < 0) {span = 24 + span}
+        return span
+    }
+    
 }

@@ -26,11 +26,14 @@ struct BlockCreationUIView: View {
     func CreateEntryClicked() {
         // confirm inputs filled
         errorMesage = ""
-        if (pay <= 0) {
+        if (pay <= 0) { // Missing Pay
             errorMesage += "Pay: missing amount\n"
         }
-        if (timeEnd.toTimeString() == timeStart.toTimeString()) {
+        if (timeEnd.toTimeString() == timeStart.toTimeString()) { // Times Are Equal
             errorMesage += "End Time: is equal to start time\n"
+        }
+        if (viewModel.model.checkEntryExists(date: date, time: timeStart)) { // Date+Time Exists
+             errorMesage += "Entry already exists with date and time\n"
         }
         // Alert
         if (errorMesage.count > 0) {
@@ -46,97 +49,101 @@ struct BlockCreationUIView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                // Label
-                HeaderText("Create New Block")
-                // Input Stack
-                HStack {
-                    // Date Input
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Date:")
-                            .bold()
-                        DatePicker("",
-                            selection: $date,
-                            displayedComponents: .date
+            ScrollView {
+                VStack {
+                    // Label
+                    HeaderText("Create New Block")
+                    // Input Stack
+                    HStack {
+                        // Date Input
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Date:")
+                                .bold()
+                            DatePicker("",
+                                       selection: $date,
+                                       displayedComponents: .date
+                            )
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .labelsHidden()
+                            
+                        }
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.black, lineWidth: 1)
                         )
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .labelsHidden()
+                        // Pay Input
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Pay:")
+                                .bold()
+                            TextField("0.00", value: $pay, format: .number)
+                                .keyboardType(.decimalPad)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.black, lineWidth: 1)
+                        )
+                    }
+                    HStack {
+                        // Time Start Input
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Time Start:")
+                                .bold()
+                            DatePicker(
+                                "",
+                                selection: $timeStart,
+                                displayedComponents: .hourAndMinute
+                            )
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.black, lineWidth: 1)
+                        )
+                        // Time End Input
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Time End:")
+                                .bold()
+                            DatePicker(
+                                "",
+                                selection: $timeEnd,
+                                displayedComponents: .hourAndMinute
+                            )
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.black, lineWidth: 1)
+                        )
                         
                     }
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(.black, lineWidth: 1)
-                    )
-                    // Pay Input
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Pay:")
-                            .bold()
-                        TextField("0.00", value: $pay, format: .number) .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(.black, lineWidth: 1)
-                    )
-                }
-                HStack {
-                    // Time Start Input
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Time Start:")
-                            .bold()
-                        DatePicker(
-                            "",
-                            selection: $timeStart,
-                            displayedComponents: .hourAndMinute
-                        )
-                        .labelsHidden()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(.black, lineWidth: 1)
-                    )
-                    // Time End Input
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Time End:")
-                            .bold()
-                        DatePicker(
-                            "",
-                            selection: $timeEnd,
-                            displayedComponents: .hourAndMinute
-                        )
-                        .labelsHidden()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(.black, lineWidth: 1)
-                    )
+                    Spacer()
                     
                 }
-                Spacer()
-                
-            }
-            .padding()
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        CreateEntryClicked()
-                    } label: {
-                        Label("Create Entry", systemImage: "plus")
+                .padding()
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            CreateEntryClicked()
+                        } label: {
+                            Label("Create Entry", systemImage: "plus")
+                        }
                     }
                 }
             }
-        }
-        .alert(isPresented: $showingAlert) {
-            Alert(
-                title: Text("Problem Creating Entry"),
-                message: Text(errorMesage),
-                dismissButton: .cancel()
-            )
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("Problem Creating Entry"),
+                    message: Text(errorMesage),
+                    dismissButton: .cancel()
+                )
+            }
         }
     }
 }

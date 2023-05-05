@@ -29,7 +29,7 @@ struct BlockInfoCellUIView: View {
     func loadEntryData() {
         date = entry.date
         time = entry.timeStart
-        hours = entry.hoursBlock
+        hours = entry.hours
         pay = entry.pay
         route = entry.routing
         // UI
@@ -52,8 +52,8 @@ struct BlockInfoCellUIView: View {
                     .padding(.horizontal, 4)
                 
                 Text(time)
-                    .frame(width: metrics.size.width * 0.12, height: metrics.size.height, alignment: .leading)
-                    .padding(.horizontal, 4)
+                    .frame(width: metrics.size.width * 0.14, height: metrics.size.height, alignment: .leading)
+                    .padding(.horizontal, 2)
                 
                 Text( "\(String(format:"%.1f", hours)) hr" )
                     .frame(width: metrics.size.width * 0.18, height: metrics.size.height, alignment: .leading)
@@ -64,11 +64,11 @@ struct BlockInfoCellUIView: View {
                     .padding(.horizontal, 4)
                 
                 Text(route)
-                    .frame(width: metrics.size.width * 0.38, height: metrics.size.height, alignment: .leading)
+                    .frame(width: metrics.size.width * 0.36, height: metrics.size.height, alignment: .leading)
                     .padding(.horizontal, 4)
-                    .lineLimit(1)
                 
             }
+            .lineLimit(1)
             .font(.system(size: 13))
             .foregroundColor(fontColor)
         }

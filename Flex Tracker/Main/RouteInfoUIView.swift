@@ -46,13 +46,16 @@ struct RouteInfoUIView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HeaderText("Full Route Information")
-                blockUI
-                routeUI
-                Spacer()
+            ScrollView {
+                VStack {
+                    HeaderText("Full Route Information")
+                    blockUI
+                    routeUI
+                    Spacer()
+                }
+                .onAppear() {loadEntryData()}
             }
-            .onAppear() {loadEntryData()}
+            
         }
     }
     
@@ -154,7 +157,9 @@ struct RouteInfoUIView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Milage:")
                         .bold()
-                    TextField("0.00", value: $milage, format: .number) .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("0.00", value: $milage, format: .number)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 .padding(4)
                 .overlay(
@@ -165,7 +170,9 @@ struct RouteInfoUIView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Milage (Return):")
                         .bold()
-                    TextField("0.00", value: $milageReturn, format: .number) .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("0.00", value: $milageReturn, format: .number)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 .padding(4)
                 .overlay(

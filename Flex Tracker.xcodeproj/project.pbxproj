@@ -14,6 +14,14 @@
 		6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */; };
 		6000472429D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */; };
 		6000472629D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */; };
+		604D735029FA05EF009817D3 /* CSVConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D734F29FA05EF009817D3 /* CSVConverter.swift */; };
+		604D735229FA0679009817D3 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 604D735129FA0679009817D3 /* data.csv */; };
+		604D735429FA0720009817D3 /* CSVConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735329FA0720009817D3 /* CSVConverterTests.swift */; };
+		604D735629FA166A009817D3 /* AnalysisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735529FA166A009817D3 /* AnalysisModel.swift */; };
+		604D735829FA1962009817D3 /* EntryAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735729FA1962009817D3 /* EntryAnalysisTests.swift */; };
+		604D735A29FB217A009817D3 /* EntryAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735929FB217A009817D3 /* EntryAnalysis.swift */; };
+		604D735D29FB2DD9009817D3 /* EntriesModel-Patches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735C29FB2DD9009817D3 /* EntriesModel-Patches.swift */; };
+		604D736029FB3288009817D3 /* AnalysisUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D735F29FB3288009817D3 /* AnalysisUIView.swift */; };
 		6078160D29EDDFC300B3CB03 /* BlockInfoCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078160C29EDDFC300B3CB03 /* BlockInfoCellUIView.swift */; };
 		6078160F29EDE30800B3CB03 /* BlockCreationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078160E29EDE30800B3CB03 /* BlockCreationUIView.swift */; };
 		6078161129EDEE7900B3CB03 /* EntriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6078161029EDEE7900B3CB03 /* EntriesModel.swift */; };
@@ -24,6 +32,8 @@
 		608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */; };
 		608076B529E9F346007D7872 /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B429E9F346007D7872 /* MainUIView.swift */; };
 		608076B729E9F6E4007D7872 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608076B629E9F6E4007D7872 /* ViewModel.swift */; };
+		6083D4E22A030C77001DC1C7 /* EntryCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */; };
+		6083D4E42A044F60001DC1C7 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083D4E32A044F60001DC1C7 /* EntryList.swift */; };
 		60B0A5E329F9E25C00D0446E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 60B0A5E229F9E25C00D0446E /* Documentation.docc */; };
 		60D1229F29F9C77900030524 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1229E29F9C77900030524 /* UIElements.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +66,15 @@
 		6000471F29D55E8200587C5C /* Flex TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flex TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6000472329D55E8200587C5C /* Delivery_Gig_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITests.swift; sourceTree = "<group>"; };
 		6000472529D55E8200587C5C /* Delivery_Gig_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_Gig_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		604D734F29FA05EF009817D3 /* CSVConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVConverter.swift; sourceTree = "<group>"; };
+		604D735129FA0679009817D3 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
+		604D735329FA0720009817D3 /* CSVConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVConverterTests.swift; sourceTree = "<group>"; };
+		604D735529FA166A009817D3 /* AnalysisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisModel.swift; sourceTree = "<group>"; };
+		604D735729FA1962009817D3 /* EntryAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAnalysisTests.swift; sourceTree = "<group>"; };
+		604D735929FB217A009817D3 /* EntryAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAnalysis.swift; sourceTree = "<group>"; };
+		604D735B29FB2AFC009817D3 /* sample.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = sample.csv; sourceTree = "<group>"; };
+		604D735C29FB2DD9009817D3 /* EntriesModel-Patches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntriesModel-Patches.swift"; sourceTree = "<group>"; };
+		604D735F29FB3288009817D3 /* AnalysisUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisUIView.swift; sourceTree = "<group>"; };
 		6078160C29EDDFC300B3CB03 /* BlockInfoCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockInfoCellUIView.swift; sourceTree = "<group>"; };
 		6078160E29EDE30800B3CB03 /* BlockCreationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreationUIView.swift; sourceTree = "<group>"; };
 		6078161029EDEE7900B3CB03 /* EntriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesModel.swift; sourceTree = "<group>"; };
@@ -66,6 +85,8 @@
 		608076B229E9EEB3007D7872 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		608076B429E9F346007D7872 /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		608076B629E9F6E4007D7872 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCoreDataTests.swift; sourceTree = "<group>"; };
+		6083D4E32A044F60001DC1C7 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
 		60B0A5E029F9D98900D0446E /* Flex-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flex-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
 		60B0A5E229F9E25C00D0446E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		60D1229E29F9C77900030524 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -120,6 +141,7 @@
 		6000470229D55E8100587C5C /* Flex Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				604D734E29FA05D3009817D3 /* _test */,
 				60B0A5E029F9D98900D0446E /* Flex-Tracker-Info.plist */,
 				6000470329D55E8100587C5C /* Flex_TrackerApp.swift */,
 				6000470C29D55E8200587C5C /* Persistence.swift */,
@@ -143,6 +165,8 @@
 			children = (
 				6000471929D55E8200587C5C /* Delivery_Gig_TrackerTests.swift */,
 				6078161929EF382D00B3CB03 /* DateExtensionTests.swift */,
+				604D735729FA1962009817D3 /* EntryAnalysisTests.swift */,
+				6083D4E12A030C77001DC1C7 /* EntryCoreDataTests.swift */,
 			);
 			path = FlexTrackerTests;
 			sourceTree = "<group>";
@@ -156,15 +180,45 @@
 			path = FlexTrackerUITests;
 			sourceTree = "<group>";
 		};
+		604D734E29FA05D3009817D3 /* _test */ = {
+			isa = PBXGroup;
+			children = (
+				604D735129FA0679009817D3 /* data.csv */,
+				604D735B29FB2AFC009817D3 /* sample.csv */,
+				604D734F29FA05EF009817D3 /* CSVConverter.swift */,
+				604D735329FA0720009817D3 /* CSVConverterTests.swift */,
+			);
+			path = _test;
+			sourceTree = "<group>";
+		};
+		604D735E29FB30C1009817D3 /* Entry Model */ = {
+			isa = PBXGroup;
+			children = (
+				6078161029EDEE7900B3CB03 /* EntriesModel.swift */,
+				604D735C29FB2DD9009817D3 /* EntriesModel-Patches.swift */,
+			);
+			path = "Entry Model";
+			sourceTree = "<group>";
+		};
+		604D736129FB4118009817D3 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				604D735F29FB3288009817D3 /* AnalysisUIView.swift */,
+				604D735529FA166A009817D3 /* AnalysisModel.swift */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
 		6078160B29EA05A300B3CB03 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				604D736129FB4118009817D3 /* Analysis */,
+				604D735E29FB30C1009817D3 /* Entry Model */,
 				608076B429E9F346007D7872 /* MainUIView.swift */,
 				6078160C29EDDFC300B3CB03 /* BlockInfoCellUIView.swift */,
 				6078160E29EDE30800B3CB03 /* BlockCreationUIView.swift */,
 				6078161529EE201100B3CB03 /* RouteInfoUIView.swift */,
 				608076B629E9F6E4007D7872 /* ViewModel.swift */,
-				6078161029EDEE7900B3CB03 /* EntriesModel.swift */,
 				6078161429EDEEFD00B3CB03 /* Classes */,
 				608076B129E9EEB3007D7872 /* CoreData.xcdatamodeld */,
 				60D1229E29F9C77900030524 /* UIElements.swift */,
@@ -177,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				6078161229EDEEF800B3CB03 /* Entry.swift */,
+				604D735929FB217A009817D3 /* EntryAnalysis.swift */,
+				6083D4E32A044F60001DC1C7 /* EntryList.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -287,6 +343,7 @@
 			files = (
 				6000470B29D55E8200587C5C /* Preview Assets.xcassets in Resources */,
 				6000470829D55E8200587C5C /* Assets.xcassets in Resources */,
+				604D735229FA0679009817D3 /* data.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,10 +372,16 @@
 				6000470D29D55E8200587C5C /* Persistence.swift in Sources */,
 				608076B329E9EEB3007D7872 /* CoreData.xcdatamodeld in Sources */,
 				6078160F29EDE30800B3CB03 /* BlockCreationUIView.swift in Sources */,
+				604D735A29FB217A009817D3 /* EntryAnalysis.swift in Sources */,
+				604D735029FA05EF009817D3 /* CSVConverter.swift in Sources */,
 				6000470429D55E8100587C5C /* Flex_TrackerApp.swift in Sources */,
 				6078161829EF366700B3CB03 /* DateFormatter.swift in Sources */,
 				608076B529E9F346007D7872 /* MainUIView.swift in Sources */,
 				6078161329EDEEF800B3CB03 /* Entry.swift in Sources */,
+				604D735629FA166A009817D3 /* AnalysisModel.swift in Sources */,
+				604D735D29FB2DD9009817D3 /* EntriesModel-Patches.swift in Sources */,
+				604D736029FB3288009817D3 /* AnalysisUIView.swift in Sources */,
+				6083D4E42A044F60001DC1C7 /* EntryList.swift in Sources */,
 				6078160D29EDDFC300B3CB03 /* BlockInfoCellUIView.swift in Sources */,
 				6078161629EE201100B3CB03 /* RouteInfoUIView.swift in Sources */,
 				60B0A5E329F9E25C00D0446E /* Documentation.docc in Sources */,
@@ -331,8 +394,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604D735829FA1962009817D3 /* EntryAnalysisTests.swift in Sources */,
 				6000471A29D55E8200587C5C /* Delivery_Gig_TrackerTests.swift in Sources */,
 				6078161A29EF382D00B3CB03 /* DateExtensionTests.swift in Sources */,
+				604D735429FA0720009817D3 /* CSVConverterTests.swift in Sources */,
+				6083D4E22A030C77001DC1C7 /* EntryCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,16 +553,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flex Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "AD.Flex-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -520,16 +588,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flex Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "AD.Flex-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
